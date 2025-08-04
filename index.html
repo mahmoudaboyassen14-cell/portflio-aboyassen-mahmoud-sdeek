@@ -22,6 +22,9 @@
             --secondary-color: #20c997;
             --gray: #4a4a4d;
             --bg-primary: #ecf0f3;
+            --background2: #faebd7;
+            --lingt-orange: #f9aa44;
+            --beige: #ceb99d;
         }
 
         .container {
@@ -42,6 +45,8 @@
 
         body {
             font-family: "Poppins", sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--background);
         }
 
         ul {
@@ -130,7 +135,7 @@
         #home .header-content img {
             width: 600px;
             margin: auto;
-           
+
         }
 
 
@@ -187,8 +192,108 @@
             transform: scale(0.85);
         }
 
+        /* جزء slides */
+        #main {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: var(--background2);
+            padding: 2rem 0;
+
+        }
+
+        .slider {
+            position: relative;
+            width: 800px;
+            padding: 4rem 0;
+        }
+
+        .slider .slides .slide img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            background-color: var(--beige);
+
+        }
+
+        .slider .slides .slide .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0px;
+        }
+
+        .slider .slides .slide .content .qoute {
+            color: var(--lingt-orange);
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .slider .slides .slide .content .jop {
+            font-size: 20px;
+            display: block;
+            margin: 10px 0px 30px;
+            font-weight: 400;
+            color: #333;
+        }
+
+        .next,
+        .prev {
+            position: absolute;
+            top: 50%;
+            border: none;
+            background-color: var(--beige);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .next {
+            right: -30px;
+        }
+
+        .prev {
+            left: -30px;
+        }
+
+        .dots {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .dots .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--beige);
+            border-radius: 50%;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .slider .dots .dot.active {
+            background-color: var(--lingt-orange);
+        }
+
+        .slider .slides .slide {
+            display: none;
+        }
+
+        .slider .slides .slide.active {
+            display: block;
+        }
+
+
 
         /*  about */
+        #About {
+            margin-bottom: 4rem;
+        }
+
         #About,
         #skills,
         #Services,
@@ -200,7 +305,7 @@
         #skills h2,
         #Services h2,
         #portfolio h2,
-        #contact h2 ,
+        #contact h2,
         #CV h1 {
             text-align: center;
             font-size: 38px;
@@ -436,94 +541,105 @@
         }
 
         /* جزء ال cv */
-        .main{
-            background-color:rgba(211, 202, 202, 0.549);
-            padding: 4rem 0;  
-            margin-bottom: 4rem;         
-            
+        .main {
+            background-color: rgba(211, 202, 202, 0.549);
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+
         }
-             #CV{
-                min-height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                max-width:1100px;
-                margin: auto;
-                }
 
-             #CV h1{
-               margin-top: 6rem ;
-               margin-bottom: 1rem;
-                font-size: 60px;
-                font-weight: 600;              
-             }
+        #CV {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-            #CV .accordion {
-                padding: 3rem 2rem;
-                border-radius: 5px;
-                box-shadow: 1px 1px 1px rgba(8, 8, 8, 0.2);
-                direction: rtl;
-                width: 100%;
-                background-color: rgba(248, 244, 244, 0.991);
-                margin-bottom: 2rem;
-               
-            }
-            
-           
-            #CV .accordion .accordion-item {
-                box-shadow: 1px 1px 5px rgb(0, 0, 0,0.2);
-                margin: 20px 0px;
-                background-color: ;
-                background-color: white;
-            }
-            #CV .accordion .accordion-item .accordion-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 15px 20px;
-            
-            }
-            #CV .accordion .accordion-item .accordion-header {
-                font-weight: 300;
-                font-size: 18px;
-                color: var(--dark-blue);
-                cursor: pointer;
-            }
-            #CV .accordion .accordion-item .accordion-header .toggle-icon{
-                border: none;
-                background-color: blue;
-                color: white;
-                width: 25px;
-                height: 25px;
-                cursor: pointer;
-                border-radius: 50%;
-                font-size: 20px;
-                }
-            #CV .accordion .accordion-item .accordion-content{
-                padding: 15px 20px;
-                background-color: rgba(124, 204, 219, 0.715);
-                line-height: 1.6;
-                color: var(--primary-color);
-                display: none;
-                font-size: 20px;
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                font-weight: 400;
-            }
-            #CV .accordion .accordion-item .accordion-content .active {
-                display: block;
-            }
-             #CV .accordion .accordion-item .accordion-content .ul {
-                direction: ltr;
-                display: grid;
-                grid-template-columns: 2fr 1fr;
-                list-style:circle;
-                padding-left: 20px;
-             }
-             #CV .accordion .accordion-item .accordion-content .ul0 , .ul1 , .ul2 , .ul3 {             
-                list-style:circle;
-                padding-right: 20px;
-             }
+        #CV h1 {
+            margin-top: 6rem;
+            margin-bottom: 1rem;
+            font-size: 60px;
+            font-weight: 600;
+        }
+
+        #CV .accordion {
+            padding: 3rem 2rem;
+            border-radius: 5px;
+            box-shadow: 1px 1px 1px rgba(8, 8, 8, 0.2);
+            direction: rtl;
+            width: 100%;
+            background-color: rgba(248, 244, 244, 0.991);
+            margin-bottom: 2rem;
+
+        }
+
+
+        #CV .accordion .accordion-item {
+            box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.2);
+            margin: 20px 0px;
+            background-color: ;
+            background-color: white;
+        }
+
+        #CV .accordion .accordion-item .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+
+        }
+
+        #CV .accordion .accordion-item .accordion-header {
+            font-weight: 300;
+            font-size: 14px;
+            color: var(--dark-blue);
+            cursor: pointer;
+        }
+
+        #CV .accordion .accordion-item .accordion-header .toggle-icon {
+            border: none;
+            background-color: blue;
+            color: white;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 20px;
+        }
+
+        #CV .accordion .accordion-item .accordion-content {
+            padding: 15px 20px;
+            background-color: rgba(124, 204, 219, 0.715);
+            line-height: 1.6;
+            color: var(--primary-color);
+            display: none;
+            font-size: 16px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 400;
+        }
+
+        #CV .accordion .accordion-item .accordion-content .active {
+            display: block;
+        }
+
+        #CV .accordion .accordion-item .accordion-content .ul {
+            direction: ltr;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            list-style: circle;
+            padding-left: 20px;
+        }
+
+        #CV .accordion .accordion-item .accordion-content .ul0,
+        .ul1,
+        .ul2,
+        .ul3 {
+            list-style: circle;
+            padding-right: 20px;
+        }
 
 
         /*  contact */
@@ -586,7 +702,7 @@
             color: white;
             box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.2);
         }
-            
+
 
         /* تابلت */
         @media (max-width:768px) {
@@ -622,6 +738,16 @@
 
             #home .header-content h1 {
                 font-size: 50px;
+            }
+
+            .slider {
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                width: 600px;
+                text-align: center;
+                padding: 4rem 2rem;
+                margin: 6rem 0;
             }
 
             #About h2 {
@@ -664,14 +790,15 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-             #CV h1{
-               margin-top: 8rem ;
-               margin-bottom: 2rem;
-                           
-             }
-              #contact h2{
-                margin-top:4rem
-              }
+            #CV h1 {
+                margin-top: 8rem;
+                margin-bottom: 2rem;
+
+            }
+
+            #contact h2 {
+                margin-top: 4rem
+            }
 
             #contact .row img {
                 max-width: 250px;
@@ -687,15 +814,17 @@
 
         /* جزء الموبايل  */
         @media (max-width:528px) {
-            #home .navbar nav{
+            #home .navbar nav {
                 text-align: center;
                 align-items: center;
                 justify-content: center;
-                margin-left: -10px;
+
             }
-             #home .navbar nav ul{
-                font-size: 14px;
-                }
+
+            #home .navbar nav ul {
+                font-size: 12px;
+            }
+
             #home .header-content {
                 grid-template-columns: 1fr;
                 margin: auto;
@@ -725,6 +854,22 @@
                 margin: auto;
                 margin-top: -20px;
                 margin-left: -15px;
+            }
+
+            .slider {
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                width: 300px;
+                text-align: center;
+                padding: 4rem 2rem;
+                margin: 8rem 0;
+            }
+
+            .slider .slides .slide .content p {
+                font-size: 14px;
+                line-height: 1.0;
+                margin: 20px 0px;
             }
 
             #About h2,
@@ -761,14 +906,15 @@
                 margin: auto;
             }
 
-             #CV .accordion .accordion-item .accordion-content .ul {
-                direction: ltr;                  
-               list-style: circle;
-               display: block;
-             }
-              #CV .accordion .accordion-item .accordion-header  {
-                font-size: 14px;    
-                     }
+            #CV .accordion .accordion-item .accordion-content .ul {
+                direction: ltr;
+                list-style: circle;
+                display: block;
+            }
+
+            #CV .accordion .accordion-item .accordion-header {
+                font-size: 14px;
+            }
 
             #contact h2 {
                 margin-top: 2rem;
@@ -784,9 +930,7 @@
                 position: fixed;
                 right: 30px;
             }
-            }
-
-
+        }
     </style>
 
 
@@ -802,11 +946,12 @@
                     <ul>
                         <li> <a href="#home">home</a></li>
                         <li> <a href="#About">About</a></li>
+                        <li> <a href="#main">slides</a></li>
                         <li> <a href="#Services">Services</a></li>
                         <li> <a href="#portfolio">portfolio</a></li>
                         <li> <a href="#CV">c.v</a></li>
                         <li> <a href="#contact">contact</a></li>
-                        
+
                     </ul>
                 </nav>
             </div>
@@ -836,7 +981,7 @@
                     </div>
                     <a href="#About" class="btn-primary">About Me <i class="fa-solid fa-circle-arrow-down"></i></a>
                 </div>
-                <img src="محمود (6).png" alt="mahmoud">
+                <img src="محمود (6).png" alt="">
             </div>
         </header>
 
@@ -920,6 +1065,96 @@
             </div>
 
         </section>
+
+        <!-- جزء ال  slides -->
+        <main id="main">
+            <div class="slider">
+                <div class="slides">
+                    <!-- السلايد الاول  -->
+                    <div class="slide active">
+                        <img src="/5.png" alt="mahmoud1">
+                        <div class="content">
+                            <p> "Graphic and motion designer, creating creative visual content that delivers impactful
+                                messages, using modern design
+                                tools to produce professional and engaging work"
+                            </p>
+                            <div class="qoute">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <span class="jop"> Graphic and motion designer </span>
+                        </div>
+                    </div>
+                    <!-- السلايد الثانى  -->
+                    <div class="slide">
+                        <img src="/4.png" alt="mahmoud1">
+                        <div class="content">
+                            <p> "Creative whiteboard animator crafting engaging visual stories to simplify ideas,educate
+                                audiences,and promote cultural
+                                content through illustration,storytelling,and motion design."
+                            </p>
+                            <div class="qoute">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <span class="jop"> Graphic and motion designer </span>
+                        </div>
+                    </div>
+                    <!-- السلايد الثالث  -->
+                    <div class="slide">
+                        <img src="/3.png" alt="mahmoud1">
+                        <div class="content">
+                            <p> "Creative video editor and content creator blending motion graphics, storytelling, and
+                                editing to produce engaging,
+                                impactful, and audience-focused digital content experiences"
+                            </p>
+                            <div class="qoute">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <span class="jop"> Graphic and motion designer </span>
+                        </div>
+                    </div>
+                    <!-- السلايد الرابع  -->
+                    <div class="slide">
+                        <img src="/6.png" alt="mahmoud1">
+                        <div class="content">
+                            <p> "Creative web designer building responsive, user-friendly websites with modern design
+                                principles, focusing on aesthetics,
+                                functionality, and seamless user experience"
+                            </p>
+                            <div class="qoute">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <span class="jop"> Graphic and motion designer </span>
+                        </div>
+                    </div>
+                    <!-- السلايد الخامس   -->
+                    <div class="slide">
+                        <img src="/1.png" alt="mahmoud1">
+                        <div class="content">
+                            <p> "Certified tech trainer with Egypt’s Ministry of Youth and Sports, empowering youth
+                                through
+                                digital skills, innovation,
+                                and interactive technology workshops"
+                            </p>
+                            <div class="qoute">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <span class="jop"> Graphic and motion designer </span>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <button type="button" class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="dots">
+                    <span class="dot "></span>
+                    <span class="dot"></span>
+                    <span class="dot "></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+            </div>
+
+        </main>
 
         <!-- جزء ال  Services -->
         <section id="Services">
@@ -1116,130 +1351,134 @@
 
         <!--c.v  جزء -->
         <main class="main">
-        <section id="CV">
-            <!-- عنوان سيرة ذاتية  -->
+            <section id="CV">
+                <!-- عنوان سيرة ذاتية  -->
                 <h1> C.V </h1>
-            <div class="accordion">
-                <!-- المعلومات الشخصية  -->
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>البيانات الشخصية</h2>
-                        <button class="toggle-icon">+</button>
+                <div class="accordion">
+                    <!-- المعلومات الشخصية  -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h2>البيانات الشخصية</h2>
+                            <button class="toggle-icon">+</button>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="ul0">
+                                <li> الاسم : محمود صديق محمد محمود </li>
+                                <li> السن : 40 سنة </li>
+                                <li> المهنة: موظف بمديرية الشباب والرياضة بسوهاج </li>
+                            </ul>
+                        </div>
+
                     </div>
-                    <div class="accordion-content">
-                        <ul class="ul0">
-                            <li> الاسم : محمود صديق محمد محمود </li>
-                            <li> السن : 40 سنة </li>
-                            <li> المهنة: موظف بمديرية الشباب والرياضة بسوهاج </li>
-                        </ul>
+                    <!-- التعليم  -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h2>التعلــــــيم</h2>
+                            <button class="toggle-icon">+</button>
+                        </div>
+                        <div class="accordion-content">
+                            <p>بكالوريوس حاسب الى </p>
+                            <p>المعهد العالى لعلوم الكمبيوتر بسوهاج -معادل بكلية تجاره - نظم معلومات ادارية</p>
+                            <p> </p>
+
+                        </div>
+
                     </div>
-        
+
+                    <!-- نبذة-->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h2>نـــــــــــــبـــــــــــذة</h2>
+                            <button class="toggle-icon">+</button>
+                        </div>
+                        <div class="accordion-content">
+                            <p> مصمم جرافيك ومصمم فيديوهات موشن جرافيك ووايت بورد أنيميشن بخبرة متميزة في تقديم محتوى
+                                بصري جذاب. <br>
+                                أعمل كمطور مواقع ويب باستخدام HTML وCSS، وأسعى دائمًا لتقديم حلول إبداعية ومبتكرة. <br>
+                                بدأت مشواري كمصمم حر، ثم التحقت بوزارة الشباب والرياضة كمشرف حاسب ومسؤول إعلامي وتقني.
+                                <br>
+                                أؤمن بأن التصميم رسالة، وأسعى لجعل كل مشروع يعبر عن فكرته بأفضل شكل ممكن
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- المهارات  -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h2>المهـــارات</h2>
+                            <button class="toggle-icon">+</button>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="ul">
+                                <li> Microsoft 365 </li>
+                                <li> Adobe Illustrator </li>
+                                <li> Adobe Photoshop </li>
+                                <li> Adobe After Effects </li>
+                                <li> Whiteboard animation </li>
+                                <li> front end developer ( HTML - CSS ) </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- اللغات  -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h2> اللغـــات </h2>
+                            <button class="toggle-icon">+</button>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="ul1">
+                                <li> العربية</li>
+                                <li> الانجليزية</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- الخبرات المهنية   -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h2>الخبرات المهنية </h2>
+                            <button class="toggle-icon">+</button>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="ul2">
+                                <li> موظف بمديرية الشباب والرياضة </li>
+                                <li> مسؤل الربط الالكترونى </li>
+                                <li> منسق اعلامى بمديرية الشباب والرياضة بسوهاج </li>
+                                <li> مصمم جرافيك بمطبعة فكرة </li>
+                                <li> مصمم فيديوهات موشن جرافيك وايت بورد انميشن فرى لانسر </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- الخبرات فى العمل   -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h2>الدورات الحاصل عليها</h2>
+                            <button class="toggle-icon">+</button>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="ul3">
+                                <li> دورة اعداد مدربين تكنولوجى تابعه لوحده طور وغير بوزارة الشباب والرياضة </li>
+                                <li> دورة ICDL الرخصة الدولية فى استخدام الحاسب الالى</li>
+                                <li> دورة مصمم جرافيك فوتوشوب ( اون لاين ) </li>
+                                <li> دورة مونتاج الفيديو ببرنامج البريمير ( اون لاين )</li>
+                                <li> دورة موشن جرافيك ببرنامج الافتر افيكت ( اون لاين ) </li>
+                                <li> دورة الاستراتيجية والامن القومى باكاديمية ناصر العسكرية</li>
+                                <li> دورة اعداد مدربين تطوير مواقع الويب تابعه لوحده طور وغير بوزارة الشباب والرياضة
+                                </li>
+                                <li> دورة الازمات والتفاوض باكاديمية ناصر العسكرية </li>
+                            </ul>
+
+                        </div>
+
+                    </div>
                 </div>
-                <!-- التعليم  -->
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>التعلــــــيم</h2>
-                        <button class="toggle-icon">+</button>
-                    </div>
-                    <div class="accordion-content">
-                        <p>بكالوريوس حاسب الى </p>
-                        <p>المعهد العالى لعلوم الكمبيوتر بسوهاج -معادل بكلية تجاره - نظم معلومات ادارية</p>
-                        <p> </p>
-        
-                    </div>
-        
-                </div>
-        
-                <!-- نبذة-->
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>نـــــــــــــبـــــــــــذة</h2>
-                        <button class="toggle-icon">+</button>
-                    </div>
-                    <div class="accordion-content">
-                        <p> مصمم جرافيك ومصمم فيديوهات موشن جرافيك ووايت بورد أنيميشن بخبرة متميزة في تقديم محتوى بصري جذاب. <br>
-                        أعمل كمطور مواقع ويب باستخدام HTML وCSS، وأسعى دائمًا لتقديم حلول إبداعية ومبتكرة. <br>
-                        بدأت مشواري كمصمم حر، ثم التحقت بوزارة الشباب والرياضة كمشرف حاسب ومسؤول إعلامي وتقني. <br>
-                        أؤمن بأن التصميم رسالة، وأسعى لجعل كل مشروع يعبر عن فكرته بأفضل شكل ممكن</p>
-                    </div>
-        
-                </div>
-        
-                <!-- المهارات  -->
-                <div  class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>المهـــارات</h2>
-                        <button class="toggle-icon">+</button>
-                    </div>
-                    <div class="accordion-content">
-                        <ul class="ul">
-                            <li> Microsoft 365 </li>
-                            <li> Adobe Illustrator </li>
-                            <li> Adobe Photoshop </li>
-                            <li> Adobe After Effects </li>
-                            <li> Whiteboard animation </li>
-                            <li> front end developer ( HTML - CSS ) </li>
-                        </ul>
-        
-                    </div>
-        
-                </div>
-        
-                <!-- اللغات  -->
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2> اللغـــات </h2>
-                        <button class="toggle-icon">+</button>
-                    </div>
-                    <div class="accordion-content">
-                        <ul class="ul1">
-                            <li> العربية</li>
-                            <li> الانجليزية</li>
-                        </ul>
-                    </div>
-                </div>
-        
-                <!-- الخبرات المهنية   -->
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>الخبرات المهنية </h2>
-                        <button class="toggle-icon">+</button>
-                    </div>
-                    <div class="accordion-content">
-                        <ul class="ul2">
-                            <li> موظف بمديرية الشباب والرياضة </li>
-                            <li> مسؤل الربط الالكترونى </li>
-                            <li> منسق اعلامى بمديرية الشباب والرياضة بسوهاج </li>
-                            <li> مصمم جرافيك بمطبعة فكرة </li>
-                            <li> مصمم فيديوهات موشن جرافيك وايت بورد انميشن فرى لانسر </li>
-                        </ul>
-                    </div>
-                </div>
-        
-                <!-- الخبرات فى العمل   -->
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>الدورات الحاصل عليها</h2>
-                        <button class="toggle-icon">+</button>
-                    </div>
-                    <div class="accordion-content">
-                        <ul class="ul3">
-                            <li> دورة اعداد مدربين تكنولوجى تابعه لوحده طور وغير بوزارة الشباب والرياضة </li>
-                            <li> دورة ICDL الرخصة الدولية فى استخدام الحاسب الالى</li>
-                            <li> دورة مصمم جرافيك فوتوشوب ( اون لاين ) </li>
-                            <li> دورة مونتاج الفيديو ببرنامج البريمير ( اون لاين )</li>
-                            <li> دورة موشن جرافيك ببرنامج الافتر افيكت ( اون لاين ) </li>
-                            <li> دورة الاستراتيجية والامن القومى باكاديمية ناصر العسكرية</li>
-                            <li> دورة اعداد مدربين تطوير مواقع الويب تابعه لوحده طور وغير بوزارة الشباب والرياضة</li>
-                            <li> دورة الازمات والتفاوض باكاديمية ناصر العسكرية </li>
-                        </ul>
-        
-                    </div>
-        
-                </div>
-            </div>
-        
-        </section>
+
+            </section>
         </main>
 
         <!-- جزء ال  contact & fotter -->
@@ -1261,70 +1500,87 @@
             </div>
         </section>
 
-       
     </main>
     <!-- جزء ال  footer -->
     <footer id="footer">
         <p>&copy; 2025 ! All rights reserved </p>
         <a href="#home" class="scroll-up"><i class="fa-solid fa-arrow-up"></i></a>
-
     </footer>
-
-
-
-
-
     <script>
-        // <!-- الجزء الخاص بتشغيل الفيديو  -->
-        const videos = document.querySelectorAll("video");
+        // <!-- accordion الجزء الخاص   -->
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = document.querySelectorAll(".accordion-item");
 
-        videos.forEach(video => {
-            video.addEventListener("play", () => {
-                videos.forEach(v => {
-                    if (v !== video) {
-                        v.pause();
+            items.forEach(item => {
+                const header = item.querySelector(".accordion-header");
+
+                header.addEventListener("click", () => {
+                    // غلق كل العناصر المفتوحة
+                    items.forEach(i => {
+                        if (i !== item) {
+                            i.classList.remove("active");
+                            i.querySelector(".accordion-content").style.display = "none";
+                            i.querySelector(".toggle-icon").textContent = "+";
+                        }
+                    });
+
+                    // تبديل العنصر الحالي
+                    const content = item.querySelector(".accordion-content");
+                    const icon = item.querySelector(".toggle-icon");
+
+                    if (item.classList.contains("active")) {
+                        content.style.display = "none";
+                        icon.textContent = "+";
+                        item.classList.remove("active");
+                    } else {
+                        content.style.display = "block";
+                        icon.textContent = "−";
+                        item.classList.add("active");
                     }
                 });
             });
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
-                const items = document.querySelectorAll(".accordion-item");
+        // <!-- slides الجزء الخاص   -->
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
 
-                items.forEach(item => {
-                    const header = item.querySelector(".accordion-header");
-
-                    header.addEventListener("click", () => {
-                        // غلق كل العناصر المفتوحة
-                        items.forEach(i => {
-                            if (i !== item) {
-                                i.classList.remove("active");
-                                i.querySelector(".accordion-content").style.display = "none";
-                                i.querySelector(".toggle-icon").textContent = "+";
-                            }
-                        });
-
-                        // تبديل العنصر الحالي
-                        const content = item.querySelector(".accordion-content");
-                        const icon = item.querySelector(".toggle-icon");
-
-                        if (item.classList.contains("active")) {
-                            content.style.display = "none";
-                            icon.textContent = "+";
-                            item.classList.remove("active");
-                        } else {
-                            content.style.display = "block";
-                            icon.textContent = "−";
-                            item.classList.add("active");
-                        }
-                    });
-                });
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                dots[i].classList.remove("active");
             });
 
+            slides[index].classList.add("active");
+            dots[index].classList.add("active");
+            currentIndex = index; // تحديث المؤشر الحالي
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+        // ✅ إضافة حدث الضغط على النقاط
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                showSlide(i);
+            });
+        });
+        // ✅ إضافة التشغيل التلقائي كل 4 ثواني
+        setInterval(nextSlide, 6000);
+        // ✅ ربط الأزرار
+        prevBtn.addEventListener("click", prevSlide);
+        nextBtn.addEventListener("click", nextSlide);
+        // ✅ عرض أول شريحة عند التحميل
+        showSlide(currentIndex);
     </script>
 </body>
 
-
 </html>
-
-
